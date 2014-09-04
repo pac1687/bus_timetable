@@ -1,0 +1,13 @@
+<div class="container">
+  <%= render("layouts/errors", :object => @station) %>
+</div>
+
+<div class="form-group">
+  <%= form_for(@station) do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <%= f.submit(:class => "btn btn-primary btn-xs") %>
+  <% end %>
+</div>
