@@ -4,12 +4,14 @@ class StationsController < ApplicationController
   end
 
   def new
+    @lines = Line.all
     @station = Station.new
   end
 
   def create
     @station = Station.new(params[:station])
     if @station.save
+      @stop = Stop.new(params[:stop])
       flash[:notice] = "#{@station.name} was added to the Bus Timetable."
       redirect_to stations_path
     else
@@ -18,6 +20,7 @@ class StationsController < ApplicationController
   end
 
   def edit
+    @lines = Line.all
     @station = Station.find(params[:id])
   end
 

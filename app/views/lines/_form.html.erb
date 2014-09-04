@@ -9,10 +9,11 @@
       <%= f.text_field :name %>
     </div>
     <div class="form-group">
+      <h3>Assign Stations:</h3>
       <%= hidden_field_tag "line[station_ids][]", nil %>
-      <% Station.all.each do |station| %>
-        <%= check_box_tag "line[station_ids][]", station.id, @line.station_ids.include?(station.id), id: dom_id(station) %>
-        <%= label_tag dom_id(station), station.name %><br>
+      <% Station.all.each do |line| %>
+        <%= check_box_tag "line[station_ids][]", line.id, @line.station_ids.include?(line.id), id: dom_id(line) %>
+        <%= label_tag dom_id(line), line.name %><br>
       <% end %>
     </div>
     <%= f.submit(:class => "btn btn-primary btn-xs") %>
