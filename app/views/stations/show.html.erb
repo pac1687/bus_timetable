@@ -2,4 +2,11 @@
   <h2><%= @station.name %></h2>
 </div>
 
+<h3>Line(s):</h3>
+<ul>
+  <% @station.lines.each do |line| %>
+  <li><%= line.name %></li>
+  <% end %>
+</ul>
+
 <a href="/stations/<%= @station.id %>/edit" class="btn btn-warning btn-xs">+ Edit Station</a>
