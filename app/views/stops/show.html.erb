@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h2><%= @stop.station.name + " | " + @stop.line.name %></h2>
+</div>
+
+<%= link_to "- Delete", stop_path(@stop),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"},
+                         :class => "btn btn-danger btn-xs" %>

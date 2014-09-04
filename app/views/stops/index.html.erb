@@ -4,8 +4,9 @@
 
 <div class="container">
   <ul>
-    <% @lines.each do |line| %>
-      <li><a href="lines/<%= line.id %>"><%= line.name %></a></li>
+    <% @stops.each do |stop| %>
+      <li><a href="stops/<%= stop.id %>"><%= stop.station.name +
+      " | " + stop.line.name %></a></li>
     <% end %>
   </ul>
 </div>

@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   resources :lines
 
-  resources :stops
+  resources :stops, :except => [:edit]
 end
