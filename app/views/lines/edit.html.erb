@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h2>Edit Line</h2>
+</div>
+
+<form action="/lines/<%= @line.id %>" method="post">
+  <%= render 'form' %>
+</form>
+
+<a href="/lines/<%= @line.id %>/edit" class="btn btn-warning btn-xs">+ Edit</a>
+
+<%= link_to "- Delete", line_path(@line),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"},
+                         :class => "btn btn-danger btn-xs" %>

@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   resources :lines
 
-  resources :stops, :except => [:new, :show]
+  resources :stops
 end

@@ -35,4 +35,11 @@ class StationsController < ApplicationController
     @station = Station.find(params[:id])
   end
 
+  def destroy
+    @station = Station.find(params[:id])
+    @station.destroy
+    flash[:notice] = "Deleted."
+    redirect_to stations_path
+  end
+
 end

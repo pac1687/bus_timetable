@@ -1,13 +1,14 @@
 <div class="container">
-  <%= render("layouts/errors", :object => @station) %>
+  <%= render("layouts/errors", :object => @line) %>
 </div>
 
 <div class="form-group">
-  <%= form_for(@station) do |f| %>
+  <%= form_for(@line) do |f| %>
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name %>
     </div>
-    <%= f.submit(:class => "btn btn-primary btn-xs")%>
+    </select>
+    <%= f.submit(:class => "btn btn-primary btn-xs") %>
   <% end %>
 </div>

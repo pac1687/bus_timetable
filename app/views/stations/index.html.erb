@@ -1,11 +1,12 @@
 <div class="page-header">
-  <h1>+ Stations</h1>
+  <h1>Stations</h1>
 </div>
 
 <div class="container">
   <ul>
     <% @stations.each do |station| %>
-      <li><%= station.name %></li>
+      <li><a href="stations/<%= station.id %>"><%= station.name %></a></li>
     <% end %>
   </ul>
 </div>
+

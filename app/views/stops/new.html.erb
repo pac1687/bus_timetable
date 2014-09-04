@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h2>New Stop</h2>
+</div>
+
+<form action="/stops" method="post">
+  <div class="form-group">
+    <select name="stop[station_id]">
+      <% @stations.each do |station|%>
+      <option value="<%= station.id %>"> <%= station.name %></option>
+      <% end %>
+    </select>
+    <select name="stop[line_id]">
+      <% @lines.each do |line|%>
+      <option value="<%= line.id %>"> <%= line.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <button class="btn btn-primary btn-xs">Create Stop</button>
+</form>
