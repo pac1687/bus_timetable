@@ -5,7 +5,9 @@
 <h3>Line(s):</h3>
 <ul>
   <% @station.lines.each do |line| %>
-  <li><%= line.name %></li>
+  <div class="container">
+    <li><%= line.name %></li>
+  </div>
   <% end %>
 </ul>
 
