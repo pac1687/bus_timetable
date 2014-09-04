@@ -11,11 +11,28 @@ class StationsController < ApplicationController
     @station = Station.new(params[:station])
     if @station.save
       flash[:notice] = "#{@station.name} was added to the Bus Timetable."
-      redirect_to("/stations/#{@station.id}")
+      redirect_to stations_path
     else
-      @stations = Station.all
-      render('/stations/new')
+      render 'new'
     end
+  end
+
+  def edit
+    @station = Station.find(params[:id])
+  end
+
+  def update
+    @station = Station.find(params[:id])
+    if @station.update(params[:station])
+      flash[:notice] = "#{@station.name} was updated."
+      redirect_to station_path(@station)
+    else
+      render 'edit'
+    end
+  end
+
+  def show
+    @station = Station.find(params[:id])
   end
 
 end
